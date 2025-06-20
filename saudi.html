@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+
+<head>
+    <meta name="Ersteller der Homepage" content="Nathan-Maximilian Sauter"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+    <title>C02 FOOTPRINT VON LÄNDERN DIESER WELT</title>
+   
+   
+<style type ="text/css">
+
+@media only screen and (min-width: 1024px){
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url(https://raw.githubusercontent.com/NMSauter/CO2FOOTPRINT/refs/heads/main/co2bildhintergrund-min.jpeg);
+      background-position: center top;
+      background-size: 100% auto;
+      overflow: auto;
+}
+
+header ul {
+
+  background-color: greenyellow;
+  list-style-type: none; /* Entfernt Aufzählungszeichen */
+  text-align: right; 
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  top: 0px; /*setzt die Elemente an den obersten Rand der Seite*/
+  left: 0px;
+}
+
+
+header li {
+  display: inline-block; /*listet die Elemente nebeneinander anstatt untereinander*/
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: medium;
+  color: #4287f5;
+  margin-right: 8px; /* Abstand zwischen den Links */
+  margin-top: 5px;
+}
+
+.main{
+
+    left:50%;
+    top:50%;
+}
+
+h1 {
+  font-family: 'Arial', 'Helvetica', sans-serif; 
+  font-size: 1.9em; 
+  background-color: greenyellow;
+  color:rgba(30, 0, 255, 0.993); /*Farbe über Farbwähler definiert*/
+  text-align: center; /*Text soll mittig stehen*/
+}
+
+.article {
+
+    background-color: aliceblue;
+    background-position: center;
+    opacity: 0.75; /*opacity ermöglicht die Transparenz des Hintergrunds zu variieren*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(30, 0, 255, 0.993);
+    width: 900px;
+    height: 225px;
+    font-size:large;
+    text-align:justify;
+    position:absolute;
+    margin: 0px;
+    padding: 0px;
+    left: 300px;
+}
+
+.article2 {
+    background-color: aliceblue;
+    background-position: center;
+    opacity: 0.75;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(30, 0, 255, 0.993);
+    width: 900px;
+    height: 300px;
+    font-size:large;
+    text-align:justify;
+    position:absolute;
+    left: 300px;
+    top: 600px;
+}
+
+thead {
+
+    text-align: center;
+
+}
+
+tbody {
+
+    text-align:center;
+}
+
+footer ul {
+  list-style-type: none;
+  position:absolute;
+  bottom: -350px;
+  left: 640px;
+  padding: 0px;
+
+}
+
+footer li {
+  background-color: greenyellow;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  color: #4287f5;
+  margin-right: 10px; /* Abstand zwischen den Links */
+
+}
+
+footer p {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  color:#4287f5;
+  background-color: greenyellow;
+  position:absolute;
+  bottom: -350px;
+  left: 0px;
+  padding: 0px;
+}
+}
+
+@media only screen and (max-width: 1023px) and (orientation: landscape) {
+      body {
+      margin: 0;
+      padding: 0;
+      background-color:#4287f5;
+      overflow: auto;
+      }
+
+header ul {
+  background-color: greenyellow;
+  list-style-type: none; /* Entfernt Aufzählungszeichen */
+  text-align: left; 
+  position:fixed;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  top: 0px; /*setzt die Elemente an den obersten Rand der Seite*/
+  right: 165px;
+}
+
+
+header li {
+  display: inline-block; /*listet die Elemente nebeneinander anstatt untereinander*/
+  background-color: greenyellow;
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: large;
+  color: #4287f5;
+  margin-right: 10px; /* Abstand zwischen den Links */
+}
+
+h1 {
+  font-family: 'Arial', 'Helvetica', sans-serif; 
+  font-size: 1.9em; 
+  background-color: greenyellow;
+  color:rgba(30, 0, 255, 0.993); /*Farbe über Farbwähler definiert*/
+  text-align: center; /*Text soll mittig stehen*/
+  width: cover; 
+}
+
+.article {
+
+    background-color: aliceblue;
+    background-position: center;
+    opacity: 0.75; /*opacity ermöglicht die Transparenz des Hintergrunds zu variieren*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(30, 0, 255, 0.993);
+    width: 800px;
+    height: 225px;
+    font-size:large;
+    text-align:justify;
+    position:absolute;
+    margin: 0px;
+    padding: 0px;
+    right: 00px;
+}
+
+.article2 {
+
+    background-color: aliceblue;
+    background-position: center;
+    opacity: 0.75;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(30, 0, 255, 0.993);
+    width: 800px;
+    height: 325px;
+    font-size:large;
+    text-align:justify;
+    position:absolute;
+    right: 00px;
+    bottom: -165px;
+}
+
+thead {
+
+    text-align: center;
+
+}
+
+tbody {
+
+    text-align:center;
+}
+
+footer ul {
+  list-style-type: none;
+  position:absolute;
+  bottom: -760px;
+  left: -375px;
+  padding: 0px;
+
+}
+
+footer li {
+  background-color: greenyellow;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  color: #4287f5;
+  margin-right: 10px; /* Abstand zwischen den Links */
+
+}
+
+footer p {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  color:#4287f5;
+  background-color: greenyellow;
+  position:absolute;
+  bottom: -760px;
+  right: 5px;
+  padding: 5px;
+}
+}
+
+@media only screen and (max-width: 1023px) and (orientation: portrait) {
+      body {
+      margin: 0;
+      padding: 0;
+      background-color:#4287f5;
+      overflow: auto;
+      }
+
+header ul {
+  background-color: greenyellow;
+  list-style-type: none; /* Entfernt Aufzählungszeichen */
+  text-align: left; 
+  position:fixed;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  top: 0px; /*setzt die Elemente an den obersten Rand der Seite*/
+  right: 165px;
+}
+
+
+header li {
+  display: inline-block; /*listet die Elemente nebeneinander anstatt untereinander*/
+  background-color: greenyellow;
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: large;
+  color: #4287f5;
+  margin-right: 10px; /* Abstand zwischen den Links */
+}
+
+h1 {
+  font-family: 'Arial', 'Helvetica', sans-serif; 
+  font-size: 1.9em; 
+  background-color: greenyellow;
+  color:rgba(30, 0, 255, 0.993); /*Farbe über Farbwähler definiert*/
+  text-align: center; /*Text soll mittig stehen*/
+  width: 800px;
+}
+
+
+.article {
+
+    background-color: aliceblue;
+    background-position: center;
+    opacity: 0.75; /*opacity ermöglicht die Transparenz des Hintergrunds zu variieren*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(30, 0, 255, 0.993);
+    width: 800px;
+    height: 225px;
+    font-size:large;
+    text-align:justify;
+    position:absolute;
+    margin: 0px;
+    padding: 0px;
+    right: 0px;
+}
+
+.article2 {
+
+    background-color: aliceblue;
+    background-position: center;
+    opacity: 0.75;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(30, 0, 255, 0.993);
+    width: 800px;
+    height: 340px;
+    font-size:large;
+    text-align:justify;
+    position:absolute;
+    right: 0px;
+    top: 570px;
+}
+
+thead {
+
+    text-align: center;
+
+}
+
+tbody {
+
+    text-align:center;
+}
+
+footer ul {
+  list-style-type: none;
+  position:absolute;
+  bottom: -760px;
+  left: -375px;
+  padding: 0px;
+
+}
+
+footer li {
+  background-color: greenyellow;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  color: #4287f5;
+  margin-right: 10px; /* Abstand zwischen den Links */
+
+}
+
+footer p {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  color:#4287f5;
+  background-color: greenyellow;
+  position:absolute;
+  bottom: -760px;
+  right: 5px;
+  padding: 5px;
+}
+}
+</style>
+    
+</head>
+<body>
+    
+    <!--header mit Logo und Links-->
+<div class="header">
+    <header>
+            <img src="https://raw.githubusercontent.com/NMSauter/CO2FOOTPRINT/refs/heads/main/EmissioneV2.png" width="333" height="200" alt="Mein Logo" />
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="https://raw.githubusercontent.com/NMSauter/CO2FOOTPRINT/refs/heads/main/deutschland.png" width="25" height="22" alt="Deuschland"></a></li>
+                <li><a href="saudi.html"><img src="https://raw.githubusercontent.com/NMSauter/CO2FOOTPRINT/refs/heads/main/saudiflag.png" width="25" height="22" alt="Saudiflag"></a></li>
+                <li><a href="presse.html">يضعط</a></li>
+                <li><a href="spende.html">هبة</a></li>
+                <li><a href="statistiken.html">إحصائيات</a></li>
+
+            </ul></nav>
+
+    </header>
+    </div>
+
+    <main>
+        <h1>البصمة الكربونية للدول والشركات في جميع أنحاء العالم: قائمة انبعاثات ثاني أكسيد الكربون</br></h1>
+
+        <section>
+<!--Artikel Text schreiben-->
+<div class ="article">
+        <article><h2>خطر حاضر على الكوكب!</h2>
+
+                <p>في وقتٍ تُعدّ فيه حماية المناخ وتغير المناخ موضوعًا ساخنًا للنقاش بين العديد من المواطنين، قررنا تأسيس منظمة
+                     "انبعاثات" غير الحكومية. تهدف هذه المنظمة إلى خفض الانبعاثات، وبالتالي تعزيز الاستدامة. من خلال هذا
+                      الموقع الإلكتروني، تهدف المنظمة إلى توضيح الدول والشركات الأكثر انبعاثات في العالم بشفافية، وتوفير
+                     إحصاءات تُبيّن المجالات التي يُمكن أن تكون فيها تدابير الخفض فعّالة بشكل خاص.
+                </p>
+        </article>
+    </div>
+    
+<!--Artikel2 mit Tabellenelementen füllen-->
+<div class="article2">
+       <article><h2>نقدم هنا الإحصائيات الأولى:</h2>
+                <h4>يتعلق الأمر بأكبر الجهات المسببة للانبعاثات في جميع أنحاء العالم.</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>أرض</th>
+                            <th>يتحرى</th>
+                            <th>الانبعاث [كجم/كم²]</th>
+                            <th>حصة الانبعاثات العالمية [%]</th>
+                            <th>حصة الناتج المحلي الإجمالي العالمي [%]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kina</td>
+                            <td>GREAT WOLL</td>
+                            <td>9999</td>
+                            <td>3,0</td>
+                            <td>1,9</td>
+                        </tr>
+                        <tr>
+                            <td>USB</td>
+                            <td>DAU Chemical</td>
+                            <td>9999</td>
+                            <td>3,0</td>
+                            <td>2,7</td>
+                        </tr>
+                        <tr>
+                            <td>Bindien</td>
+                            <td>Dada</td>
+                            <td>7399</td>
+                            <td>2,5</td>
+                            <td>1,4</td>
+                        </tr>
+                        <tr>
+                            <td>Tankreich</td>
+                            <td>Dodal Energies</td>
+                            <td>4350</td>
+                            <td>1,4</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>Lübien</td>
+                            <td>MuhammarOil</td>
+                            <td>2250</td>
+                            <td>0,8</td>
+                            <td>0,6</td>
+                        </tr>
+                    </tbody>
+                </table>    
+    </article> 
+</div>
+</section>
+</main>
+<!--Footer mit links und Copyright gestalten-->
+<div class="footer"> 
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="datenschutz.html">حماية البيانات</a></li>
+                <li><a href="kontakt.html">اتصال</a></li>
+                <li><a href="impressum.html">بصمة</a></li>
+            </ul>
+        </nav>
+        <p>Copyright &copy; Nathan-Maximilian Sauter</p>  
+    </footer>
+</body>
+
+</html>

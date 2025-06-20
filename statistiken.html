@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+
+<head>
+    <meta name="Ersteller der Homepage" content="Nathan-Maximilian Sauter"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>C02 FOOTPRINT VON LÄNDERN DIESER WELT</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/validator@13.15.15/validator.js"></script> 
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+<script>
+
+/*zum sortieren benötigter Input*/
+type="text/javascript">
+    $(document).ready(function () {
+        $('SFtabelle').DataTable();
+        validator.stripTags
+    });
+
+/*Filterfunktion mit Texteingabe und Suche in SFTabelle*/
+function filterTabelle() {  
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("Eingabe");
+  escape(input); /*sanitizer escape(input) Funktion aus dem Validator Paket soll gefährdende Eingaben wie & < > " ' entfernen*/
+  filter = input.value.toUpperCase();
+  table = document.getElementById("SFTabelle");
+  tr = table.getElementsByTagName("tr");
+
+  /*Schleife läuft die Tabelle zur Suche der zu filternden Elemente ab*/
+  for (i = 0; i < tr.length; i++) {    
+    let td = tr[i].getElementsByTagName("td")[0]; /*würde man 1 statt 0 einsetzen, könnte nach der Spalte Unternehmen anstatt nach Land gefiltert werden*/
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function escapeHtml(input) {    /*escapeHtml ist eine Funktion, die gefährdende Eingaben wie & < > " ' $ */ 
+ return input                    /*in ungefährliche Elementtypen, d.h. string umwandeln soll, die keinen html-Code darstellen*/
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/$/g, "&#36;")
+    .replace(/'/g, "&#039;");
+}
+
+const inputString = "Das ist ein String mit < und > Zeichen und Anführungszeichen sowie Apostrophen und $-Zeichen";
+const escapedString = escapeHtml(inputString);
+console.log(escapedString);   /*Konsolenausgabe*/
+
+
+function sortTabelle(columnIndex) {
+
+    //Tabellenzeilen aus der SFTabelle holen
+    let table = document.getElementById("SFTabelle");
+    let rows = Array.from(table.rows).slice(1);
+
+    //generieren der sortierten Zeilen
+    let sortedRows = rows.sort((a, b) => {
+        let cellA = a.cells[columnIndex].innerText;
+        let cellB = b.cells[columnIndex].innerText;
+        return cellA.localeCompare(cellB);
+    });
+
+    //Aktualisierung
+    sortedRows.forEach(row => table.tBodies[0].appendChild(row));
+
+}
+</script>
+    
+
+   
+<style type ="text/css">
+
+@media only screen and (min-width: 1024px){    /*Seitenanordnung für Bildschirme mit Mindestbreite von 1024px*/
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url(https://raw.githubusercontent.com/NMSauter/CO2FOOTPRINT/refs/heads/main/co2bildhintergrund-min.jpeg);
+      background-position: center top;
+      background-size: 100%;
+      overflow: auto;
+}
+}
+
+
+header ul {
+  background-color: greenyellow;
+  list-style-type: none; /* Entfernt Aufzählungszeichen */
+  text-align: right; 
+  position: absolute;
+  margin: 0px;
+  padding-left: 5px;
+  float: right;
+  top: 0px; /*setzt die Elemente an den obersten Rand der Seite*/
+  right: 0px;
+}
+
+
+header li {
+  display: inline-block; /*listet die Elemente nebeneinander anstatt untereinander*/
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: medium;
+  color: #4287f5;
+  margin-right: 8px; /* Abstand zwischen den Links */
+  margin-top: 5px;
+}
+
+
+h1 {
+  font-family: 'Arial', 'Helvetica', sans-serif; 
+  font-size: 1.9em; 
+  background-color: greenyellow;
+  color:rgba(30, 0, 255, 0.993); /*Farbe über Farbwähler definiert*/
+  text-align: center; /*Text soll mittig stehen*/
+}
+
+.statistik {  /*CSS Gestaltung der Tabelle*/
+
+    background-color: aliceblue;
+    background-position: center;
+    opacity: 0.75;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(30, 0, 255, 0.993);
+    width: 905px;
+    height: 510px;
+    font-size:large;
+    text-align:justify;
+    position:absolute;
+    left: 18%;
+    top: 55%;
+}
+
+thead {
+
+    text-align: center;
+
+}
+
+tbody {
+
+    text-align:center;
+}
+
+footer ul {
+  list-style-type: none;
+  position:absolute;
+  bottom: -290px;
+  left: 580px;
+  padding: 0px;
+
+}
+
+footer li {
+  background-color: greenyellow;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  color: #4287f5;
+  margin-right: 10px; /* Abstand zwischen den Links */
+
+}
+
+footer p {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  color:#4287f5;
+  background-color: greenyellow;
+  position:absolute;
+  bottom: -290px;
+  left: 0px;
+  padding: 0px;
+}
+
+
+@media only screen and (max-width: 1023px){  /*Seitenanordnung für Bildschirme mit Maximalbreite von 1023px*/
+      body {
+      margin: 0;
+      padding: 0;
+      background-color:#4287f5;
+      overflow: auto;
+}
+
+
+header ul {
+  background-color: greenyellow;
+  list-style-type: none; /* Entfernt Aufzählungszeichen */
+  text-align: right; 
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  float: right;
+  top: 0px; /*setzt die Elemente an den obersten Rand der Seite*/
+  right: -385px;
+}
+
+
+header li {
+  display: inline-block; /*listet die Elemente nebeneinander anstatt untereinander*/
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: large;
+  color: #4287f5;
+  margin-right: 10px; /* Abstand zwischen den Links */
+}
+
+
+h1 {
+  font-family: 'Arial', 'Helvetica', sans-serif; 
+  font-size: 1.9em; 
+  background-color: greenyellow;
+  color:rgba(30, 0, 255, 0.993); /*Farbe über Farbwähler definiert*/
+  text-align: center; /*Text soll mittig stehen*/
+  width: 800px;
+}
+
+
+.statistik {   /*CSS Gestaltung der Tabelle*/
+
+    background-color: aliceblue;
+    background-position: center;
+    opacity: 0.75;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(30, 0, 255, 0.993);
+    width: 800px;
+    height: 510px;
+    font-size:large;
+    text-align:justify;
+    position:absolute;
+    left: 0px;
+    bottom: -103px;
+}
+
+thead {
+
+    text-align: center;
+
+}
+
+tbody {
+
+    text-align:center;
+}
+
+footer ul {
+  list-style-type: none;
+  position:flex;
+  bottom: -750px;
+  left: 650px;
+  padding: 0px;
+
+}
+
+footer li {
+  background-color: greenyellow;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  color: #4287f5;
+  margin-right: 10px; /* Abstand zwischen den Links */
+
+}
+
+footer p {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  color:#4287f5;
+  background-color: greenyellow;
+  position:absolute;
+  bottom: -750px;
+  left: 5px;
+  padding: 5px;
+}
+}
+</style>
+    
+</head>
+<body>
+    
+<div class="header">
+    <header>
+
+        <img src="https://raw.githubusercontent.com/NMSauter/CO2FOOTPRINT/refs/heads/main/EmissioneV2.png" width="333" height="200" alt="Mein Logo" />
+
+        <nav>
+            <ul>
+                <li><a href="saudi.html" rel="alternate" hreflang="ar"><img src="https://raw.githubusercontent.com/NMSauter/CO2FOOTPRINT/refs/heads/main/saudiflag.png" width="20" height="20" alt="Saudiflag"></a></li>
+                <li><a href="presse.html">Presse</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="spende.html">Spende</a></li>
+                <li><a href="statistiken.html">Statistiken</a></li>
+
+            </ul></nav>
+    </header>
+    </div>
+
+    <main>
+        <h1>CO<sub>2</sub>-FOOTPRINT VON LÄNDERN UND UNTERNEHMEN DIESER WELT: <br>Eine Auflistung von CO<sub>2</sub>-Ausstößen </br></h1>
+
+        <section>
+
+
+<div class="statistik">
+       <article><h2>Hier stellen wir die Statistik zum Filtern und Sortieren vor:</h2>
+                <h4>Hier geht es um die Top-Emittenten weltweit.</h4>
+
+<!--Eingabefeld für die Filterung bzw. Suche und die Sortierknöpfe für Land und Unternehmen. 
+Sortieren nach alphabetischer Reihenfolger -->
+<!--Eingabefeld mit der Filterfunktion und der Escapefunktion bei Eingabe-->
+<input type="text" id="Eingabe" onkeyup="filterTabelle(), escapeHtml(input)" placeholder="Suche/Filtern">
+         <br> <button type="button" onclick="sortTabelle(0)">Land</button> </br>
+          <button type="button" onclick="sortTabelle(1)">Unternehmen</button>
+
+<table id="SFTabelle">
+
+                    <thead>
+                        <tr>
+                            <th onclick="sortTabelle(0)">Land</th>
+                            <th onclick="sortTabelle(1)">Unternehmen</th>
+                            <th>Emission [kg/km<sup>2</sup>]</th>
+                            <th>Anteil am globalen Ausstoß [%] </th>
+                            <th>Anteil am BIP weltweit [%]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kina</td>
+                            <td>GREAT WOLL</td>
+                            <td>9999</td>
+                            <td>3,0</td>
+                            <td>1,9</td>
+                        </tr>
+                        <tr>
+                            <td>USB</td>
+                            <td>DAU Chemical</td>
+                            <td>9999</td>
+                            <td>3,0</td>
+                            <td>2,7</td>
+                        </tr>
+                        <tr>
+                            <td>Bindien</td>
+                            <td>Dada</td>
+                            <td>7399</td>
+                            <td>2,5</td>
+                            <td>1,4</td>
+                        </tr>
+                        <tr>
+                            <td>Tankreich</td>
+                            <td>Dodal Energies</td>
+                            <td>4350</td>
+                            <td>1,4</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>Lübien</td>
+                            <td>MuhammarOil</td>
+                            <td>2250</td>
+                            <td>0,8</td>
+                            <td>0,6</td>
+                        </tr>
+                        <tr>
+                            <td>Ekipten</td>
+                            <td>Nile-Suez</td>
+                            <td>4399</td>
+                            <td>1,5</td>
+                            <td>1,4</td>
+                        </tr>
+                        <tr>
+                            <td>Maxiko</td>
+                            <td>CityProperties</td>
+                            <td>2380</td>
+                            <td>0,5</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Bresilien</td>
+                            <td>Manaus Wood</td>
+                            <td>2550</td>
+                            <td>0,7</td>
+                            <td>0,6</td>
+                        </tr>
+                           <tr>
+                            <td>Kina</td>
+                            <td>BWD</td>
+                            <td>9999</td>
+                            <td>3,5</td>
+                            <td>1,95</td>
+                        </tr>
+                        <tr>
+                            <td>Kina</td>
+                            <td>BWD2</td>
+                            <td>9999</td>
+                            <td>3,5</td>
+                            <td>1,95</td>
+                        </tr>
+                    </tbody>
+                </table>    
+    </article> 
+
+</div>
+</section>
+</main>
+
+
+<div class="footer">
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+        <p>Copyright &copy; Nathan-Maximilian Sauter</p>  
+    </footer>
+</body>
+</html>
