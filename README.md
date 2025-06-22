@@ -3,9 +3,9 @@ Weitere Dateien werden aus NMSauter/CO2FOOTPRINT/main oder anderen öffentlich z
 
 to do:
 
-Optimale Auflösung für responsive Designs beim zoomen und auf unterschiedliche Auflösungen optimieren.
+Auflösung für responsive Designs beim zoomen und auf unterschiedliche Auflösungen optimieren.
 Weitere Funktionen.
-HTTPS-Zertifikat  SSL/TLS.
+HTTPS-Zertifikat SSL/TLS.
 Presseberichte hinzufügen.
 Kontaktformular.
 Social Media Links. 
